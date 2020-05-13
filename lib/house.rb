@@ -26,4 +26,11 @@ class House
   def area
     @rooms.sum { |room| room.area }
   end
+
+  def details
+    details = Hash.new
+    details["price"] = price
+    details["address"] = @address
+    details
+  end
 end
