@@ -11,4 +11,7 @@ class House
     digits.to_i
   end
 
+  def add_room(room)
+    @rooms << room
+  end
 end
