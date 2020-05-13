@@ -41,4 +41,12 @@ class House
   def rooms_sorted_by_area
     @rooms.sort { |room| room.area}
   end
+
+  def rooms_by_category
+    by_category = Hash.new
+    by_category[:bedroom] = rooms_from_category(:bedroom)
+    by_category[:living_room] = rooms_from_category(:living_room)
+    by_category[:basement] = rooms_from_category(:basement)
+    by_category
+  end
 end

@@ -71,4 +71,16 @@ class HouseTest < Minitest::Test
     expected = [@room_4, @room_3, @room_2, @room_1]
     assert_equal expected, @house.rooms_sorted_by_area
   end
+
+  def test_it_can_sort_rooms_by_category
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+    expected = {:bedroom => [@room_1, @room_2],
+                :living_room => [@room_3],
+                :basement => [@room_4]
+                }
+    assert_equal expected, @house.rooms_by_category            
+  end
 end
