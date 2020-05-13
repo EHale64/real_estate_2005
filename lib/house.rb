@@ -20,6 +20,10 @@ class House
   end
 
   def rooms_from_category(category)
-    @rooms.find_all { |room| room.category == category}
+    @rooms.find_all { |room| room.category == category }
+  end
+
+  def area
+    @rooms.sum { |room| room.area }
   end
 end
